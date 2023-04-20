@@ -24,13 +24,13 @@ An analysis of American movie trends before and after the COVD-19 pandemic based
 ## `Data Sources`
 |Name|Type|Description|Website|
 |---|---|---|---|
-|Wikipedia|Table|List of titles|https://en.wikipedia.org/wiki/Lists_of_American_films|
-|Wikipedia|Table|List of titles|https://en.wikipedia.org/wiki/Lists_of_Netflix_original_films|
-|Wikipedia|Table|List of titles|https://en.wikipedia.org/wiki/List_of_Disney%2B_original_films|
-|Wikipedia|Table|List of titles|https://en.wikipedia.org/wiki/List_of_Amazon_Prime_Video_original_films|
-|Wikipedia|Table|List of titles|https://en.wikipedia.org/wiki/List_of_Hulu_original_films|
-|OMDb|API|List of IMDb ID's|http://www.omdbapi.com/|
-|IMDb|HTML|Movie data|https://www.imdb.com/|
+|Wikipedia|Table|List of titles|[American Films](https://en.wikipedia.org/wiki/Lists_of_American_films)|
+|Wikipedia|Table|List of titles|[Netflix Films](https://en.wikipedia.org/wiki/Lists_of_Netflix_original_films)|
+|Wikipedia|Table|List of titles|[Disney+ Films](https://en.wikipedia.org/wiki/List_of_Disney%2B_original_films)|
+|Wikipedia|Table|List of titles|[Amazon Films](https://en.wikipedia.org/wiki/List_of_Amazon_Prime_Video_original_films)|
+|Wikipedia|Table|List of titles|[Hulu Films](https://en.wikipedia.org/wiki/List_of_Hulu_original_films)|
+|OMDb|API|List of IMDb ID's|[OMDb API](http://www.omdbapi.com/)|
+|IMDb|HTML|Movie data|[IMDb](https://www.imdb.com/)|
 
 ## `Table of Contents`
 - Introduction
@@ -67,9 +67,9 @@ We chose this topic because we all love movies and have all noticed a change in 
     - What were the deeper statistical observations?
 
 ## `Hypothesis`
-**H<sub>o</sub>:** The COVID-19 pandemic had no impact on movie trends.
+**H<sub>o</sub>:** COVID-19 did not affect American movie trends.
 
-**H<sub>a</sub>:** The COVID-19 pandemic had a statistically significant impact on movie trends.
+**H<sub>a</sub>:** COVID-19 did affect American movie trends.
 
 ## `Data`
 ### Data Acquisition
@@ -118,7 +118,6 @@ We chose this topic because we all love movies and have all noticed a change in 
 ### `Number of movies released`
 - `Box Office`: We definitely noticed a decline for 2020, during the peak of the shut down, which was expected. It seems to have bounced back quickly in 2021, which didn't continue into 2022. Perhaps this is from movies that had been completed in 2020, but the release was held until 2021. However, to really understand any true long term impact, we would need more historical data to establish a pattern before COVID, as it looks like 2019 already saw a decrease.
 - `Netflix`: It appears that Netflix was already on the rise in 2019, and actually seemed to peak in 2020 and plateau with a slight decline in the years after COVID.
-![TETCB by State Rank](Images/TETCB_State_Rankings.png)
 
 ### `Genre Comparisons Pre & Post COVID`
 - `Box Office`: For the box office results, pre and post COVID didn't pose many differences. We see the highest three genres for both were Action, Comedy, and Drama. However, post-COVID production of dramas was doubled, making it the highest ranking genre overall. Also, we see that more thrillers and fantasy movies were made post COVID. But the number of both genres were still under double digits.
@@ -130,17 +129,16 @@ We chose this topic because we all love movies and have all noticed a change in 
 - Generally speaking, the data suggests that COVID did affect the `ratings`/ quality of the movies. Given the small sample size, to confirm the trend we would need a larger historical pattern to indicate if this is truly significant.
 
 ### `Budget vs. Genre`
-- Additional data manipulation
-    - Load the "movies.csv" file using the pandas read_csv() function.
-    - Convert the "Release" column to datetime format using pd.to_datetime().
-    - Replace NaN values with 0 in the "Gross" and "Budget" columns using loc[] function.
-        * Create separate dataframes for each category:boxoffice_preCOVID: Movies released in 2018-2019 in theaters
-        * boxoffice_postCOVID: Movies released in 2020 and later in theaters
-        * netflix_preCOVID: Movies released in 2018-2019 on Netflix
-        * netflix_postCOVID: Movies released in 2020 and later on Netflix
-    - Compute the average budget per genre for each category using groupby() and mean() functions.
-    - Get the top 5 genres and group the remaining genres as "Other" using slicing and sum() functions.
-- This data provides an insight into how the movie industry has been affected by the COVID-19 pandemic, specifically in terms of budget allocation for different genres. The data analysis shows that there has been a shift in budget allocation for different genres, with some genres seeing a significant decrease in budget allocation while others have seen an increase.
+- `Box Office:`
+    - Before the pandemic, animation and action films were among the highest budget films. As people spend more time at home, films with suspense, drama, and mystery have become more popular. This led to a decrease in budgets for animation and other genres.
+    - However, the increase in budgets for action and adventure films indicates that these genres are still popular, and the film industry is flexible enough to adapt to changes in audience preferences. Film production companies have also analyzed which genres were more popular on digital platforms before the pandemic and have adjusted their budgets accordingly in the post-pandemic era.
+    - Therefore, based on the given data, it can be concluded that the changes in budget distribution after the pandemic are not only related to audience preferences, but also to the new strategies of film production companies. These changes demonstrate the film industry's ability to adapt to difficult times, such as the pandemic, and shows that the industry is flexible and resilient enough to respond to changing audience preferences.
+- `Netflix:`
+    - The differences in budget distribution for Netflix films before and after COVID may be a result of both the pandemic's impact on the film industry and Netflix's own strategies.
+    - Before the pandemic, Netflix's highest budget films were usually biographical films, which could be made with lower budgets and still be profitable for Netflix, even with lower box office returns. Action films were also made with high budgets, but their budgets decreased significantly after the pandemic.
+    - After the pandemic, significant changes were observed in the budget distribution for Netflix films. Adventure, crime, and comedy films had an increase in their budgets, while animation and drama films had a decrease. This change may be due to people spending more time at home and seeking out more entertaining, light-hearted content.
+    - Moreover, Netflix may be trying to appeal to a wider audience by diversifying their budget distribution to include other genres. This may also explain the changes in the budget distribution.
+    - In conclusion, the differences in budget distribution for Netflix films are related to both the impact of the pandemic on the film industry and Netflix's own strategies. These changes may be a result of Netflix's desire to reach a wider audience and respond to changing viewer preferences.
 
 ### `Gross for Box Office Movies`
 - Pandemic significantly (p<<0.05) and negatively impacted box office movie gross
@@ -156,36 +154,39 @@ We chose this topic because we all love movies and have all noticed a change in 
 
 ### `Budget vs. Gross`
 - Additional definitions
-    * `ROI`: Return on Investment (Gross / Budget)
+    * `ROI`: Return on Investment: (Gross - Budget) / Budget
     * `Profit`: Gross profit (Gross - Budget)
 - The histograms of `Budget`, `Gross`, `ROI`, and `Profit` show that none of these metrics are normally distributed.
-- The box plots of `Budget` show a moderate decrease when the pandemic begins, and a rapid recovery to above pre-pandemic levels.
-- The box plots of `Gross` distribution by year show a significant decrease when the pandemic begins, and a slow recovery that has not reached pre-pandemic levels.
-- The box plots of `ROI` distribution by year show a significant decrease when the pandemic begins, and a slow recovery that has not reached pre-pandemic levels.
+- The linear relationship between Budget and Profit gets weaker during the pandemic and is slowly getting stronger post-pandemic.
+- The correlation between Budget and Profit declines during the pandemic and is slowly increasing post-pandemic.
+- The box plots of `Budget` distribution show a moderate decrease when the pandemic begins, and a rapid recovery to above pre-pandemic levels.
+- The box plots of `Gross` distribution show a significant decrease when the pandemic begins, and a slow recovery to match pre-pandemic levels.
+- The box plots of `ROI` distribution show a significant decrease when the pandemic begins, and a slow recovery that has not reached pre-pandemic levels.
+- The box plots of `Profit` distribution show a significant contraction when the pandemic begins, and quick recovery to pre-pandemic (2019) levels.
+- The average `Profit` per Genre declines SHARPLY post-COVID.
+- The average `ROI` per Genre declines moderately post-COVID but `Horror` films remain nearly unaffected.
 ### `Residuals and Predictive Modeling`
-
-### Total Energy Consumption 2000's Bar Chart
-#### CA vs US
-![TETCB 2000s CA vs US](Images/TETCB_CA_vs_US_Bar_2000.png)
-
-### Total CO2 Emission 2000's Bar Chart
-#### CA vs US
-![CO2 2000s CA vs US](Images/CO2_CA_vs_US_Bar_2000.png)
-
-#### US vs North America
-![CO2 2000s US vs NA](Images/CO2_US_vs_NA_Bar_2000.png)
-
-#### US vs World
-![CO2 2000s US vs World](Images/CO2_US_vs_World_Bar_2000.png)
+- Neither Multiple Linear Regression or MLPRegressor could effectively predict Metascore from a combination of 'Budget,' 'Release date,''Runtime,' and either 'Genre' or 'Platform.'
+- Release Date was turned into a Unix datetime object and Genre/Platform were one-hot encoded for analysis.
+- Lack of data required all platforms to be combined which diverges from the majority of our analysis which attempted to split between streaming and other platforms.
+- MLPClassififer was unable to predict Genre from Gross, Runtime, and Metascore.
 
 ## Conclusion
 
-**H<sub>o</sub>:** The COVID-19 pandemic had no impact on movie trends.
+**H<sub>o</sub>:** COVID-19 did not affect American movie trends. <<< `Reject`
 
-**H<sub>a</sub>:** The COVID-19 pandemic had a statistically significant impact on movie trends.
+**H<sub>a</sub>:** COVID-19 did affect American movie trends. <<< `Explore`
 
-Based on our analysis, we can reject the null hypothesis. We reject the statement  `The COVID-19 pandemic had no impact on movie trends`.
+Based on our analysis, there is enough statistically significant evidence to reject the null hypothesis. We reject the statement `COVID-19 did not affect American movie trends`.
 
-![TETCB vs. CO2 Correlation](Images/TETCBvsCO2_State_Combined_Correlation.png)
+We need to further explore the alternative hypothesis that `COVID-19 did affect American movie trends`.
 
-With such a strong positive correlation seen above (correlation coefficient of 0.976, p-value of 0.0), we can conclude that there is a correlation between fossil fuel energy consumption and CO2 emissions. `As Total Fossil Fuel Energy Consumption increases, CO2 Emissions increases with it.`
+`Limitations` and `Future Analysis`:
+- We made several interesting observations during this analysis, but due to time and scope limitations, we were not able to analyze everything we wanted to analyze.
+- We did not have time to analyze Runtime and Nominations.
+- We only used the first Genre that was available for movies which were labeled with multiple Genres.
+- We found some notable patterns eg. although Netflix produced approximately the same number of Biography films before and after COVID, they drastically decreased the portion of their total budget allocated to Biography films after COVID.
+- Due to observations like the one above, the team suspects that there are several confounding variables which we were unable to analyze due to the time and scope limitations of the study. More data (and higher-quality data) would help us gain a better understanding of COVID's real affects on American movies.
+- We explored several free data sources including Wikipedia, Kaggle, OMDb, and IMDb. However, we noticed that each of these sources was missing significant amounts of data. Although we started with more than 1500 film titles, less than a third of these had non-null values for both gross and budget in the free data sets.
+- In addition, free meta-information for Netflix original films is almost non-existent. We scaled down our analysis because the Netflix dataset was so small and incomplete (especially with regard to production budget).
+- Given more time and resources, the study should be repeated with much higher-quality datasets. Also, the study should include a few more years of pre-COVID data.
