@@ -73,6 +73,7 @@ We chose this topic because we all love movies and have all noticed a change in 
 
 ## `Data`
 ### Data Acquisition
+- `Folder`: data_acquisition_and_cleanup
 - `Wikipedia`: lists of movie titles (CSVs)
 - `OMDb API`: lists of IMDb IDs (API)
 - `IMDb`: movie data for each IMDb ID (BeautifulSoup HTML Scrape)
@@ -153,6 +154,7 @@ We chose this topic because we all love movies and have all noticed a change in 
 - `Metascore ratings` had similar effects on both Netflix and box office productions, with overall metascore ratings decreasing from one era to the next.
 
 ### `Budget vs. Gross`
+- Folder: `profit_and_roi_analysis`
 - Additional definitions
     * `ROI`: Return on Investment: (Gross - Budget) / Budget
     * `Profit`: Gross profit (Gross - Budget)
