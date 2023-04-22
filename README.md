@@ -212,7 +212,7 @@ We chose this topic because we all love movies and have all noticed a change in 
 ![Bars](q_06_budget_vs_gross/images/roi_per_genre_post.jpg)
 
 ### `Deeper Statistical Analysis`
-- Notebooks for this section are in the `Folder` output_data
+- `Folder`: q_07_machine_learning
 - Neither Multiple Linear Regression or MLPRegressor could effectively predict Metascore from a combination of 'Budget,' 'Release date,''Runtime,' and either 'Genre' or 'Platform.'
 
 ![Residuals](q_07_machine_learning/Images/MLR_True_vs_Residuals_Platform.png)
