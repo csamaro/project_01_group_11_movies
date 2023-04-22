@@ -173,10 +173,16 @@ We chose this topic because we all love movies and have all noticed a change in 
 
 ### `Budget vs. Rating`
 - `Folder`: q_05_budget_vs_rating
-- `Overall` budget has increased from Pre-COVID to Post-COVID eras, leading to higher ratings and viewership across the spectrum.
-- `Box Office` movie budgets stayed relatively similar, but produced less movies in addition to receiving lower ratings and lower viewership.
-- `Netflix` movie budgets increased along with more movies being produced, followed by an increase in both ratings and viewership.
-- `Metascore ratings` had similar effects on both Netflix and box office productions, with overall metascore ratings decreasing from one era to the next.
+- `Overall` budget has increased from Pre-COVID to Post-COVID eras, leading to higher ratings and viewership across the spectrum.       
+- `Box Office` movie budgets stayed relatively similar, but produced less movies in addition to receiving lower ratings and lower viewership.           
+![Scatter](q_05_budget_vs_rating/images/bo_budget_rating_pre.jpg)
+![Scatter](q_05_budget_vs_rating/images/bo_budget_rating_post.jpg)
+- `Netflix` movie budgets increased along with more movies being produced, followed by an increase in both ratings and viewership.              
+![Scatter](q_05_budget_vs_rating/images/netflix_budget_votes_pre.jpg)
+![Scatter](q_05_budget_vs_rating/images/netflix_budget_votes_post.jpg)
+- `Metascore ratings` had similar effects on both Netflix and box office productions, with overall metascore ratings decreasing from one era to the next.           
+![Scatter](q_05_budget_vs_rating/images/bo_budget_mscore_pre.jpg)
+![Scatter](q_05_budget_vs_rating/images/bo_budget_mscore_post.jpg)
 
 ### `Budget vs. Gross`
 - `Folder`: q_06_budget_vs_gross
@@ -188,7 +194,7 @@ We chose this topic because we all love movies and have all noticed a change in 
 ![Histograms](q_06_budget_vs_gross/images/histogram_budget.png)
 ![Histograms](q_06_budget_vs_gross/images/histogram_gross.png)
 
-- The linear relationship between Budget and Profit gets weaker during the pandemic and is slowly getting stronger post-pandemic.
+- The linear relationship between Budget and Profit gets weaker during the pandemic and is slowly getting stronger post-pandemic.       
 ![Bars](q_06_budget_vs_gross/images/linear_budget_profit.jpg)
 
 - The correlation between Budget and Profit declines during the pandemic and is slowly increasing post-pandemic.
@@ -201,7 +207,7 @@ We chose this topic because we all love movies and have all noticed a change in 
 ![Boxplots](q_06_budget_vs_gross/images/profit_distributions.jpg)
 
 - The average `Profit` per Genre declines SHARPLY post-COVID.
-- The average `ROI` per Genre changes dramatically for most genres post-COVID, with Documentary and Fantasy making the biggest gains. In contrast, `Horror` films remain nearly unaffected, maintaing their top spot on the ROI chart both pre- and post- COVID, perhaps due to their relatively low production budgets and their massive audience appeal.
+- The average `ROI` per Genre changes dramatically for most genres post-COVID, with Documentary and Fantasy making the biggest gains. In contrast, `Horror` films remain nearly unaffected, maintaing their top spot on the ROI chart both pre- and post- COVID, perhaps due to their relatively low production budgets and their massive audience appeal.      
 ![Bars](q_06_budget_vs_gross/images/roi_per_genre_pre.jpg)
 ![Bars](q_06_budget_vs_gross/images/roi_per_genre_post.jpg)
 
